@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const ApiError = require("../utils/ApiError");
 const catchAsync = require("../utils/catchAsync");
 const User = require("../models/userModel");
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const fetchUser = catchAsync(async (req, res, next) => {
   const token = req.header("token") || req.cookies.token;
